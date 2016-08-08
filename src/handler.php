@@ -2,6 +2,8 @@
 
 call_user_func(
     function () {
+        error_reporting(-1);
+
         $traceProperty = new ReflectionProperty('Exception', 'trace');
         $traceProperty->setAccessible(true);
 
