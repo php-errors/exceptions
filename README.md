@@ -1,52 +1,39 @@
-# Error handler
+# Exception-based error handling for PHP
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119].
+If this package is listed as a dependency of another package, it means that the
+package is designed to work with exception-based error handling as described in
+the [specification], and will *not* work correctly with the "native" errors
+that PHP produces by default.
 
-## 1. Overview
+## Installation
 
-This document defines the behavior of an error handler that converts PHP errors
-to exceptions. This strategy allows for simple error handling logic, and
-improved interoperability through consistency of error behavior.
+This package installs an exception-based error handler upon installation:
 
-## 2. Specification
+    composer require errors/exceptions
 
-- The error handler MUST throw an exception of type [ErrorException] when an
-  error occurs unless stated otherwise by this document.
-- The error handler MUST NOT halt execution.
-- The error handler MUST NOT throw an exception if the error's severity is
-  `E_DEPRECATED` or `E_USER_DEPRECATED`.
-- The error handler MUST NOT throw an exception if the error control operator
-  (`@`) is in use.
-- The error handler SHOULD NOT log errors, or perform other
-  performance-intensive operations if the error control operator (`@`) is in
-  use.
-- The exception methods `getSeverity()`, `getMessage()`, `getFile()`, and
-  `getLine()` MUST return identical values to those passed to the error handler.
-- Exceptions thrown MAY be a subclass of [ErrorException].
-- The installed error handler MAY perform other operations before its execution
-  completes, such as logging the error details.
+It is not necessary to manually install the error handler via
+[`set_error_handler()`].
 
-## 3. Example implementation
+[`set_error_handler()`]: http://php.net/set_error_handler
 
-```php
-set_error_handler(
-    function ($severity, $message, $path, $lineNumber) {
-        if (
-            E_DEPRECATED === $severity ||
-            E_USER_DEPRECATED === $severity ||
-            0 === error_reporting()
-        ) {
-            return true;
-        }
+## Providing an alternate error handler
 
-        throw new ErrorException($message, 0, $severity, $path, $lineNumber);
+To use an alternate error handler, simply install the handler and use
+[Composer]'s [provide] option:
+
+```json
+{
+    "provide": {
+        "errors/exceptions": "1.0.0"
     }
-);
+}
 ```
+
+The "provided" error handler should still implement the [specification].
+
+[composer]: https://getcomposer.org/
+[provide]: https://getcomposer.org/doc/04-schema.md#provide
 
 <!-- References -->
 
-[ErrorException]: http://php.net/manual/en/class.errorexception.php
-[RFC 2119]: http://tools.ietf.org/html/rfc2119
+[specification]: doc/specification.md
