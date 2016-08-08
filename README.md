@@ -1,26 +1,21 @@
 # Exception-based error handling for PHP
 
-If this package is listed as a dependency of another package, it means that the
-package is designed to work with exception-based error handling as described in
-the [specification], and will *not* work correctly with the [native] errors
-that PHP produces by default.
-
-[native]: https://github.com/php-errors/native
-
-## Installation
-
-This package installs an exception-based error handler upon installation:
+Adding this package as a dependency indicates that the root package is designed
+to work with exception-based error handling as described in the [specification],
+and will *not* work correctly with the [native] errors that PHP produces by
+default:
 
     composer require errors/exceptions
 
-It is not necessary to manually install the error handler via
-[`set_error_handler()`].
+This package installs an exception-based error handler upon installation. It is
+not necessary to manually install the error handler via [`set_error_handler()`].
 
 [`set_error_handler()`]: http://php.net/set_error_handler
+[native]: https://github.com/php-errors/native
 
 ## Providing an alternate error handler
 
-To use an alternate error handler, simply install the handler and use
+To use an alternate error handler, simply install the alternate handler and use
 [Composer]'s [provide] option:
 
 ```json
