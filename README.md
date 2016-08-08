@@ -2,8 +2,10 @@
 
 If this package is listed as a dependency of another package, it means that the
 package is designed to work with exception-based error handling as described in
-the [specification], and will *not* work correctly with the "native" errors
+the [specification], and will *not* work correctly with the [native] errors
 that PHP produces by default.
+
+[native]: https://github.com/php-errors/native
 
 ## Installation
 
