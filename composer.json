@@ -1,0 +1,17 @@
+{
+    "name": "errors/exceptions",
+    "description": "A meta-package for requiring exception-based error handling.",
+    "keywords": ["error", "errors", "handler", "exception", "errorexception"],
+    "homepage": "https://github.com/php-errors/exceptions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erin Millard",
+            "email": "ezzatron@gmail.com",
+            "homepage": "http://ezzatron.com/"
+        }
+    ],
+    "conflict": {
+        "errors/native": "^1"
+    }
+}
