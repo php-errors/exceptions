@@ -1,0 +1,6 @@
+{
+    "require": {
+        "errors/exceptions": "dev-master",
+        "errors/native": "dev-master"
+    }
+}
