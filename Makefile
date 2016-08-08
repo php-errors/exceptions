@@ -1,6 +1,10 @@
+test: install
+	php --version
+	scripts/test
+
 install: vendor/autoload.php
 
-.PHONY: install
+.PHONY: test install
 
 vendor/autoload.php: composer.lock
 	composer install

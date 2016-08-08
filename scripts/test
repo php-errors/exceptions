@@ -1,0 +1,75 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$isPassing = true;
+$test = function (
+    $description,
+    $callback,
+    ErrorException $expected = null
+) use (&$isPassing) {
+    $actual = null;
+
+    try {
+        $callback();
+    } catch (Throwable $actual) {
+        // tested afterwards
+    } catch (Exception $actual) {
+        // tested afterwards
+    }
+
+    if ($expected) {
+        $result =
+            $actual instanceof ErrorException &&
+            $actual->getMessage() === $expected->getMessage() &&
+            $actual->getSeverity() === $expected->getSeverity() &&
+            $actual->getFile() === $expected->getFile() &&
+            $actual->getLine() === $expected->getLine() &&
+            $actual->getCode() === 0;
+    } else {
+        $result = !$actual;
+    }
+
+    $isPassing = $isPassing && $result;
+
+    if ($result) {
+        echo '✓';
+    } else {
+        echo '✗';
+    }
+
+    echo ' ' . $description . PHP_EOL;
+};
+
+$test(
+    'MUST throw an ErrorException when an error occurs',
+    function () {
+        trigger_error('Error message');
+    },
+    new ErrorException('Error message', 0, E_USER_NOTICE, __FILE__, __LINE__ - 2)
+);
+
+$test(
+    'MUST NOT throw an exception if the severity is E_USER_DEPRECATED',
+    function () {
+        trigger_error('Error message', E_USER_DEPRECATED);
+    },
+    null
+);
+
+$test(
+    'MUST NOT throw an exception if the error control operator is in use',
+    function () {
+        @trigger_error('Error message', E_USER_ERROR);
+    },
+    null
+);
+
+if ($isPassing) {
+    echo 'PASS' . PHP_EOL;
+} else {
+    echo 'FAIL' . PHP_EOL;
+
+    exit(1);
+}

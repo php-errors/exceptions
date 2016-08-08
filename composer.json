@@ -1,6 +1,6 @@
 {
     "name": "errors/exceptions",
-    "description": "A meta-package for requiring exception-based error handling.",
+    "description": "An error handler that produces error exceptions.",
     "keywords": ["error", "errors", "handler", "exception", "errorexception"],
     "homepage": "https://github.com/php-errors/exceptions",
     "license": "MIT",
@@ -12,6 +12,11 @@
         }
     ],
     "conflict": {
-        "errors/native": "^1"
+        "errors/native": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/handler.php"
+        ]
     }
 }
