@@ -1,4 +1,4 @@
-# Exception-based error handling for PHP
+# The `errors/exceptions` package
 
 Adding this package as a dependency indicates that the root package is designed
 to work with exception-based error handling as described in the [specification],
