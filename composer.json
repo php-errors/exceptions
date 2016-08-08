@@ -1,6 +1,6 @@
 {
     "name": "errors/exceptions",
-    "description": "An error handler that produces error exceptions.",
+    "description": "An error handler that produces error exceptions when a native error occurs.",
     "keywords": ["error", "errors", "handler", "exception", "errorexception"],
     "homepage": "https://github.com/php-errors/exceptions",
     "license": "MIT",
