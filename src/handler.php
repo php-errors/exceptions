@@ -1,5 +1,9 @@
 <?php
 
+if (getenv('DISABLE_PHP_ERROR_EXCEPTIONS')) {
+    return;
+}
+
 call_user_func(
     function () {
         error_reporting(-1);
