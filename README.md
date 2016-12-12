@@ -21,7 +21,7 @@ To use an alternate error handler, simply install the alternate handler and use
 ```json
 {
     "provide": {
-        "errors/exceptions": "1.0.0"
+        "errors/exceptions": "0.1.0"
     }
 }
 ```
