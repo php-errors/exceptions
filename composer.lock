@@ -4,22 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d56c219d0fc939694d832985f3fa90fd",
-    "content-hash": "d4b2df8c06ebecf31d7ca6a37d5f8c7e",
+    "hash": "9ba325b0ba670c3a39009f9ef6a611c5",
+    "content-hash": "921d12576f4f69e119f0aa9a7e750b94",
     "packages": [],
     "packages-dev": [
         {
             "name": "errors/specification",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-errors/specification.git",
-                "reference": "4bd4ae4bd937a0726cbddc4613c3dd626e0567b5"
+                "reference": "510f4ec4b81d4d04726a1eeb0ef9ff3289713bf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-errors/specification/zipball/4bd4ae4bd937a0726cbddc4613c3dd626e0567b5",
-                "reference": "4bd4ae4bd937a0726cbddc4613c3dd626e0567b5",
+                "url": "https://api.github.com/repos/php-errors/specification/zipball/510f4ec4b81d4d04726a1eeb0ef9ff3289713bf0",
+                "reference": "510f4ec4b81d4d04726a1eeb0ef9ff3289713bf0",
                 "shasum": ""
             },
             "bin": [
@@ -43,14 +43,12 @@
                 "error",
                 "specification"
             ],
-            "time": "2016-12-12 01:45:50"
+            "time": "2016-12-12 22:57:35"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "errors/specification": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -12,7 +12,7 @@
         }
     ],
     "require-dev": {
-        "errors/specification": "dev-master"
+        "errors/specification": "^0.1"
     },
     "conflict": {
         "errors/native": "*"
