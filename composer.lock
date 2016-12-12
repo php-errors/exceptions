@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d56c219d0fc939694d832985f3fa90fd",
+    "content-hash": "d4b2df8c06ebecf31d7ca6a37d5f8c7e",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "errors/specification",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-errors/specification.git",
+                "reference": "4bd4ae4bd937a0726cbddc4613c3dd626e0567b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-errors/specification/zipball/4bd4ae4bd937a0726cbddc4613c3dd626e0567b5",
+                "reference": "4bd4ae4bd937a0726cbddc4613c3dd626e0567b5",
+                "shasum": ""
+            },
+            "bin": [
+                "test/exception-based-error-handler"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Erin Millard",
+                    "email": "ezzatron@gmail.com",
+                    "homepage": "http://ezzatron.com/"
+                }
+            ],
+            "description": "Error specification documents, and associated testing tools for ensuring conformance.",
+            "homepage": "https://github.com/php-errors/exceptions",
+            "keywords": [
+                "error",
+                "specification"
+            ],
+            "time": "2016-12-12 01:45:50"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "errors/specification": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

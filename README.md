@@ -31,6 +31,11 @@ The "provided" error handler should still implement the [specification].
 [composer]: https://getcomposer.org/
 [provide]: https://getcomposer.org/doc/04-schema.md#provide
 
+## Bypassing the error handler
+
+For testing purposes only, it is possible to bypass the error handler by setting
+the environment variable `DISABLE_PHP_ERROR_EXCEPTIONS=1`.
+
 <!-- References -->
 
-[specification]: doc/specification.md
+[specification]: https://github.com/php-errors/specification/blob/master/exception-based-error-handler.md

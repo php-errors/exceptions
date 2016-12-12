@@ -1,6 +1,6 @@
 test: install
 	php --version
-	scripts/test
+	vendor/bin/exception-based-error-handler src/handler.php
 
 install: vendor/autoload.php
 

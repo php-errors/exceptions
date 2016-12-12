@@ -11,6 +11,9 @@
             "homepage": "http://ezzatron.com/"
         }
     ],
+    "require-dev": {
+        "errors/specification": "dev-master"
+    },
     "conflict": {
         "errors/native": "*"
     },
