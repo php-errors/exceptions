@@ -1,6 +1,6 @@
 # `errors/exceptions` changelog
 
-## Next release
+## 0.1.1 (2016-12-13)
 
 - **[FIXED]** Updated Composer configuration to reference the tagged version of
   the specification.
