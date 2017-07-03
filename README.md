@@ -34,7 +34,7 @@ The "provided" error handler should still implement the [specification].
 ## Bypassing the error handler
 
 For testing purposes only, it is possible to bypass the error handler by setting
-the environment variable `DISABLE_PHP_ERROR_EXCEPTIONS=1`.
+the environment variable `PHP_ERROR_EXCEPTIONS=0`.
 
 <!-- References -->
 

@@ -1,6 +1,6 @@
 <?php
 
-if (getenv('DISABLE_PHP_ERROR_EXCEPTIONS')) {
+if (getenv('PHP_ERROR_EXCEPTIONS') === '0') {
     return;
 }
 
