@@ -11,15 +11,23 @@ call_user_func(
         $traceProperty = new ReflectionProperty('Exception', 'trace');
         $traceProperty->setAccessible(true);
 
+        $skipDeprecations = !getenv('PHP_ERROR_EXCEPTION_DEPRECATIONS');
+
         set_error_handler(
             function ($severity, $message, $path, $lineNumber) use (
-                $traceProperty
+                $traceProperty,
+                $skipDeprecations
             ) {
                 if (
-                    E_DEPRECATED === $severity ||
-                    E_USER_DEPRECATED === $severity ||
-                    0 === error_reporting()
+                    $skipDeprecations && (
+                        E_DEPRECATED === $severity ||
+                        E_USER_DEPRECATED === $severity
+                    )
                 ) {
+                    return true;
+                }
+
+                if (0 === error_reporting()) {
                     return true;
                 }
 

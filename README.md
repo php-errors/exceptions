@@ -31,6 +31,12 @@ The "provided" error handler should still implement the [specification].
 [composer]: https://getcomposer.org/
 [provide]: https://getcomposer.org/doc/04-schema.md#provide
 
+## Reporting deprecations
+
+In some cases, such as CI builds, it is desirable to report on deprecations. To
+enable this behavior, set the environment variable
+`PHP_ERROR_EXCEPTION_DEPRECATIONS=1`.
+
 ## Bypassing the error handler
 
 For testing purposes only, it is possible to bypass the error handler by setting
