@@ -1,6 +1,6 @@
 # `errors/exceptions` changelog
 
-## Next release
+## 0.2.0 (2017-07-04)
 
 - **[BC BREAK]** Renamed the `DISABLE_PHP_ERROR_EXCEPTIONS` environment variable
   to `PHP_ERROR_EXCEPTIONS`. The value must strictly equal `0` to disable the
